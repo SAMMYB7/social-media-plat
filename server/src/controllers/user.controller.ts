@@ -6,7 +6,7 @@ import { getCurrentUser, type AuthUser } from '../middleware/auth';
 // Validation schemas
 const updateRoleSchema = z.object({
   role: z.enum(['admin', 'professor', 'student'], {
-    errorMap: () => ({ message: 'Role must be admin, professor, or student' })
+    message: 'Role must be admin, professor, or student'
   })
 });
 
