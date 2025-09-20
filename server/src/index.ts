@@ -5,6 +5,7 @@ import { connectToDatabase, getDatabaseStatus } from "./db/connection";
 import authRouter from './routes/auth';
 import usersRouter from './routes/users';
 import uploadRouter from './routes/upload';
+import assignmentRouter from './routes/assignments';
 import { authenticate, requireRole } from './middleware/auth';
 
 await connectToDatabase().catch(err => {
@@ -36,6 +37,9 @@ app.route('/users', usersRouter)
 
 // File upload routes
 app.route('/upload', uploadRouter)
+
+// Assignment management routes
+app.route('/assignments', assignmentRouter)
 
 // Example protected route for admin only
 app.get('/admin/ping', authenticate, requireRole('admin'), (c) => {
