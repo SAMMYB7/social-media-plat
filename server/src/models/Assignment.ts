@@ -32,8 +32,7 @@ const submissionSchema = new mongoose.Schema<IAssignmentSubmission>({
   studentId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    required: [true, 'Student ID is required'],
-    index: true
+    required: [true, 'Student ID is required']
   },
   content: {
     type: String,
